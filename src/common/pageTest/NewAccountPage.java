@@ -28,9 +28,15 @@ public class NewAccountPage {
 		 this.driver=driver;
 	 }
 	 
+	 public void clickNewAccount(){
+		 
+		 driver.findElement(new_account_link).click();
+	 }
+	 
+	 
 	 public void typeCustomerId(String cusid){
 		 
-		 driver.findElement(new_account_link).sendKeys(cusid);
+		 driver.findElement(customer_id).sendKeys(cusid);
 		 
 	 }
 	 
@@ -43,7 +49,7 @@ public class NewAccountPage {
 			 
 			 Select select = new Select(ele);
 			 
-			 select.selectByVisibleText(value);
+			 select.selectByValue(value);
 			 
 		 }catch(Exception e){
 			 
@@ -71,19 +77,23 @@ public class NewAccountPage {
 			 
 			 ele.isDisplayed();
 			 
+			 return true;
+			 
 		 }catch(Exception e){
 			
 			 e.getMessage();
 			 
 		 }
 		 
-		 return true;
+		 return false;
 	 }
 	 
 	 public String getAccountID(){
 		 
-		 String cusId = driver.findElement(account_id).getText();
+		 String accId = driver.findElement(account_id).getText();
 		 
-		 return cusId;
+		 System.out.println("Account ID: "+accId);
+		 
+		 return accId;
 	 }
 }

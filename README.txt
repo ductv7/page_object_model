@@ -10,6 +10,12 @@
 
 - Download testng-6.8.13 or later and put under ./libs folder
 
-2. Assumption:
+3. Assumption:
 
 - All validation of fields are correct
+
+- Duplicate account, you have to update to different email
+
+4. How to run
+
+- Run class VerifyFunction.java as TestNG Test

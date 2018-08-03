@@ -1,15 +1,14 @@
 package common.testcase;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import common.baseTest.BaseTest;
-import common.pageTest.LoginPage;
-import common.pageTest.NewAccountPage;
-import common.pageTest.NewCustomerPage;
 
-public class VerifyLoginPage extends BaseTest {
+public class VerifyFunction extends BaseTest {
+	
+	public String cusId = null;
+	
+	public String accId = null;
 	
 	/**
 	 * @author Tran Viet Duc
@@ -34,28 +33,36 @@ public class VerifyLoginPage extends BaseTest {
 		ncustomer.typeState("Ho Chi Minh");
 		ncustomer.typePIN("700000");
 		ncustomer.typeMobile("25425456");
-		ncustomer.typeEmail("mngr146227_1@gmail.com");
+		ncustomer.typeEmail("mngr146227_3@gmail.com");
 		ncustomer.typePassword("123456");
 		ncustomer.clickSubmit();
 		ncustomer.verifyNewCustomerSuccess();
+		//Get Customer ID for next step
+		cusId = ncustomer.getCustomerID();
 	}
 	
 	@Test(priority=3, dependsOnMethods="VerifyCustomerPage")
 	public void VerifyAccountPage(){
 		
-		naccount.typeCustomerId(ncustomer.getCustomerID());
+		naccount.clickNewAccount();
+		naccount.typeCustomerId(cusId);
 		naccount.SelectAccountType("Savings");
 		naccount.typeInitDeposit("1000");
 		naccount.clickSubmit();
 		naccount.verifyNewCustomerSuccess();
+		//Get Account ID for next step
+		accId = naccount.getAccountID();
 	}
 	
 	@Test(priority=4, dependsOnMethods="VerifyAccountPage")
 	public void VerifyWithdrawalPage(){
 		
-		withdrawal.typeAccountId(naccount.getAccountID());
-		withdrawal.typeAmount("1000");
+		withdrawal.clickWithdrawalLink();
+		withdrawal.typeAccountId(accId);
+		withdrawal.typeAmount("2000");
 		withdrawal.typeDescription("Personal");
+		withdrawal.clickSubmit();
 		withdrawal.VerifyFailedPopUp();
+		withdrawal.closePopUp();
 	}
 }

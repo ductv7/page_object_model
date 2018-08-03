@@ -18,7 +18,8 @@ public class WithdrawalPage extends BaseTest {
 	 */
 	
 	
-	 //Withdrawal form	
+	 //Withdrawal form
+	 By withdrawal_link = By.xpath("//a[contains(text(),'Withdrawal')]");
 	 By account_number = By.xpath("//input[@name='accountno']");
 	 By amount = By.xpath("//input[@name='ammount']");
 	 By description = By.xpath("//input[@name='desc']");
@@ -27,6 +28,11 @@ public class WithdrawalPage extends BaseTest {
 	 public WithdrawalPage(WebDriver driver){
 		 
 		 this.driver=driver;
+	 }
+	 
+	 public void clickWithdrawalLink(){
+		 
+		 driver.findElement(withdrawal_link).click();
 	 }
 	 
 	 public void typeAccountId(String id){
@@ -45,6 +51,11 @@ public class WithdrawalPage extends BaseTest {
 		 driver.findElement(description).sendKeys(des);
 	 }
 	 
+	 public void clickSubmit(){
+		 
+		 driver.findElement(submit_btn).click();
+	 }
+	 
 	 public void VerifyFailedPopUp(){
 		 
 		 String fail_str =  "Transaction Failed. Account Balance Low";
@@ -55,5 +66,10 @@ public class WithdrawalPage extends BaseTest {
 			
 		 assertTrue(text.contains(fail_str));
 		 	 
+	 }
+	 
+	 public void closePopUp(){
+		 
+		 driver.switchTo().alert().accept();
 	 }
 }

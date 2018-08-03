@@ -107,18 +107,22 @@ public class NewCustomerPage {
 			 
 			 ele.isDisplayed();
 			 
+			 return true;
+			 
 		 }catch(Exception e){
 			
 			 e.getMessage();
 			 
 		 }
 		 
-		 return true;
+		 return false;
 	 }
 	 
 	 public String getCustomerID(){
 		 
 		 String cusId = driver.findElement(customerId).getText();
+		 
+		 System.out.println("Customer ID: "+cusId);
 		 
 		 return cusId;
 	 }
