@@ -14,7 +14,7 @@
 
 - All validation of fields are correct
 
-- Duplicate account, you have to update to different email
+- If facing existing account, you have to update to different email
 
 4. How to run
 
