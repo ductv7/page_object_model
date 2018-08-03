@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29593" started-at="2018-08-03T16:27:17Z" finished-at="2018-08-03T16:27:46Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="29593" started-at="2018-08-03T16:27:17Z" finished-at="2018-08-03T16:27:46Z">
+      <class name="common.testcase.VerifyFunction">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:common.testcase.VerifyFunction@6a41eaa2]" name="SetUp" is-config="true" duration-ms="13868" started-at="2018-08-03T23:27:17Z" finished-at="2018-08-03T23:27:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="VerifyLogin()[pri:1, instance:common.testcase.VerifyFunction@6a41eaa2]" name="VerifyLogin" duration-ms="2672" started-at="2018-08-03T23:27:31Z" finished-at="2018-08-03T23:27:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLogin -->
+        <test-method status="PASS" signature="VerifyCustomerPage()[pri:2, instance:common.testcase.VerifyFunction@6a41eaa2]" name="VerifyCustomerPage" duration-ms="4976" started-at="2018-08-03T23:27:33Z" depends-on-methods="common.testcase.VerifyFunction.VerifyLogin" finished-at="2018-08-03T23:27:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyCustomerPage -->
+        <test-method status="PASS" signature="VerifyAccountPage()[pri:3, instance:common.testcase.VerifyFunction@6a41eaa2]" name="VerifyAccountPage" duration-ms="4737" started-at="2018-08-03T23:27:38Z" depends-on-methods="common.testcase.VerifyFunction.VerifyCustomerPage" finished-at="2018-08-03T23:27:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAccountPage -->
+        <test-method status="PASS" signature="VerifyWithdrawalPage()[pri:4, instance:common.testcase.VerifyFunction@6a41eaa2]" name="VerifyWithdrawalPage" duration-ms="2361" started-at="2018-08-03T23:27:43Z" depends-on-methods="common.testcase.VerifyFunction.VerifyAccountPage" finished-at="2018-08-03T23:27:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyWithdrawalPage -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:common.testcase.VerifyFunction@6a41eaa2]" name="tearDown" is-config="true" duration-ms="956" started-at="2018-08-03T23:27:45Z" finished-at="2018-08-03T23:27:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- common.testcase.VerifyFunction -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
