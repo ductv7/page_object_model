@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="POM suite">
+  <test thread-count="5" name="POM test">
+    <classes>
+      <class name="common.baseTest.BaseTest"/>
+      <class name="common.testcase.VerifyFunction"/>
+    </classes>
+  </test> <!-- POM test -->
+</suite> <!-- POM suite -->

@@ -1,6 +1,7 @@
 package common.testcase;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import common.baseTest.BaseTest;
 

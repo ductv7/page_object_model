@@ -1,5 +1,7 @@
 package common.baseTest;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -33,6 +35,7 @@ public class BaseTest {
 			createPageObjects();
 		}
 			
+		@AfterMethod
 		@AfterClass
 		public void tearDown(){
 			try{
